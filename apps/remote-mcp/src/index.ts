@@ -1,10 +1,13 @@
-import { Hono, type Context } from 'hono';
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp';
-import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp';
 import { createClerkClient } from '@clerk/backend';
 import { generateClerkProtectedResourceMetadata } from '@clerk/mcp-tools/server';
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp';
+import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp';
+import { Hono, type Context } from 'hono';
 
-import { sendTelegramMessage, telegramMessageInputSchema } from 'sendkit-core';
+import {
+  sendTelegramMessage,
+  telegramMessageInputSchema,
+} from '@hienpage/sendkit-core';
 
 const clerkPublishableKey = process.env.CLERK_PUBLISHABLE_KEY;
 const clerkSecretKey = process.env.CLERK_SECRET_KEY;

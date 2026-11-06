@@ -1,5 +1,5 @@
 {
-  "name": "sendkit-mcp",
+  "name": "@hienpage/sendkit-mcp",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -7,8 +7,8 @@
     ".": "./src/index.ts"
   },
   "dependencies": {
+    "@hienpage/sendkit-core": "workspace:*",
     "@modelcontextprotocol/sdk": "^1.32.2",
-    "sendkit-core": "workspace:*",
     "zod": "^4.6.7"
   }
 }

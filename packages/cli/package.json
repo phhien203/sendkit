@@ -1,11 +1,11 @@
 {
-  "name": "sendkit",
+  "name": "@hienpage/sendkit",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "dependencies": {
+    "@hienpage/sendkit-core": "workspace:*",
     "commander": "^15.0.0",
-    "sendkit-core": "workspace:*",
     "zod": "^4.6.7"
   }
 }

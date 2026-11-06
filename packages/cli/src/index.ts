@@ -4,7 +4,7 @@ import { homedir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { z } from 'zod';
 
-import { sendTelegramMessage } from 'sendkit-core';
+import { sendTelegramMessage } from '@hienpage/sendkit-core';
 
 const program = new Command();
 const configPath = join(homedir(), '.config', 'sendkit', 'config.json');

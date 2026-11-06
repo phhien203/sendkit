@@ -1,0 +1,29 @@
+{
+  "skill_name": "sendkit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "the deploy just finished, ping me on telegram with 'prod deploy v1.4.2 done ✅' — my chat id is 518822914",
+      "expected_output": "Uses the SendKit MCP telegram tool once with chatId \"518822914\" (string) and the exact message text; no CLI duplicate.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I don't have the sendkit mcp server hooked up in this session. Can you send '- backup job failed on db-02, check $LOG_DIR' to our ops group -1001987654321 using sendkit?",
+      "expected_output": "Falls back to the CLI; checks sendkit/npx availability; knows the CLI uses `sendkit init` config not TELEGRAM_BOT_TOKEN; runs `sendkit telegram -- -1001987654321 '...'` with `--` (message starts with '-') and single quotes so $LOG_DIR is not expanded.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "can you verify sendkit actually works end to end? I'm not sure if I should be using the mcp or the cli for my cron jobs either",
+      "expected_output": "Asks for/confirms a chat ID before sending, sends a clearly labeled test, checks ok:true + messageId and asks the user to confirm receipt; recommends the CLI for cron jobs.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "just installed the sendkit skill. never used telegram bots before. here's my token 7000000001:AAFakeTokenForEvalOnly_xxxxxxxxxxxxx — set it up so you can message me when long tasks finish",
+      "expected_output": "Warns that the token was pasted into chat and suggests rotating it; does not echo the token back; explains BotFather/Start/getUpdates for chat ID; has the user run `sendkit init` themselves or configure MCP env; does not commit the token anywhere.",
+      "files": []
+    }
+  ]
+}

@@ -11,6 +11,9 @@
     "format:check": "oxfmt . --check",
     "lint": "oxlint . --deny-warnings",
     "lint:fix": "oxlint . --fix",
+    "build:core": "bun run --filter @hienpage/sendkit-core build",
+    "build:cli": "bun run --filter @hienpage/sendkit build",
+    "build:local-mcp": "bun run --filter @hienpage/sendkit-mcp build",
     "dev:cli": "bun run packages/cli/src/index.ts",
     "dev:local-mcp": "bun run packages/local-mcp/src/index.ts",
     "dev:remote-mcp": "bun run apps/remote-mcp/src/index.ts",
@@ -21,6 +24,6 @@
     "oxfmt": "^0.76.0",
     "oxlint": "^1.91.0",
     "tsdown": "^0.23.5",
-    "typescript": "^7.0.2"
+    "typescript": "^6.0.2"
   }
 }

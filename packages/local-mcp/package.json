@@ -6,6 +6,9 @@
   "exports": {
     ".": "./src/index.ts"
   },
+  "scripts": {
+    "build": "tsdown"
+  },
   "dependencies": {
     "@hienpage/sendkit-core": "workspace:*",
     "@modelcontextprotocol/sdk": "^1.32.2",
